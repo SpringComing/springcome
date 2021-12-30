@@ -4,7 +4,7 @@ import React from 'react';
 
 import  Cookie  from "react-cookies"
 const SERVER_URL = "http://localhost:8080";
-function test(){
+function checkSession(){
     location.href = `/api/checkSession`
     
 }
@@ -16,10 +16,6 @@ ReactDOM.render(
     document.getElementById("root")
 );
 }else{
-    test()
-    alert('로그인이 필요합니다.')
-    
-
-    
-    
+    checkSession();
+    alert('로그인이 필요합니다.');
 }
