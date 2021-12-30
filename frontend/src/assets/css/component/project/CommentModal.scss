@@ -1,0 +1,293 @@
+@charset "utf-8";
+.Modal {
+    display: flex;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 80%;
+    width: 650px;
+    height: 750px;
+    transform: translate(-50%, -50%);
+    border: 1px solid #C5C5C5;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    color: #333;
+    outline: 0;
+    border-top: double 5px transparent;
+    background-clip: content-box, border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    background-image: linear-gradient(#F6F8FC, #F6F8FC), radial-gradient(circle at top left, #EDF84C, #2AB300);
+}
+.Overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(170, 170, 170, 0.3);
+}
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 20px;
+    color: #7C7CA8;
+    h2 {
+        display: inline;
+        font-size: 36px;
+        font-weight: 400;
+    }
+    span {
+        font-size: 30px;
+        &:hover{
+            color: #85D457;
+        }
+    }
+}
+.project_reg {
+    margin-bottom: 3px;
+    .text {
+        display: flex;
+        margin: 15px 0px 15px 0px;
+        span {
+            width: 150px;
+            height: 30px;
+            font-size: 28px;
+            font-weight: 400;
+            color: #7C7CA8;
+            margin-left: 10px;
+        }
+    }
+    .modal_input {
+        display: flex;
+        //justify-content: space-between;
+        text-align: center;
+        span {
+            color: #fff;
+            background-color: #2BB632;
+            //background: linear-gradient(to right, #A5C516, #5ADD32);
+            border-radius: 5px;
+            width: 170px;
+            height: 30px;
+            border: 1px solid transparent;
+            padding: 10px 3px 2px 1px;
+            margin: 20px;
+        }
+        input {
+            border-radius: 5px;
+            border: 1px solid;
+            color:#7C7CA8;
+            border-color:#dddddd;
+            font-size: 20px;
+            width: 700px;
+            height: 50px;
+            margin: 13px 20px 20px 20px;
+            &:focus{
+                border-color: #66E966;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0 , 0.08), 0 0 8px rgba(0, 0, 0 , 0.6);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0 , 0.08), 0 0 8px rgba(0, 0, 0 , 0.6);
+            }
+        }
+    }
+    .modal_textarea {
+        display: flex;
+        text-align: center;
+        div {
+            width: 170px;
+            height: 30px;
+            font-size: 28px;
+            font-weight: 400;
+            color: #7C7CA8;
+        }
+        textarea {
+            border-radius: 5px;
+            border: 1px solid;
+            color:#7C7CA8;
+            border-color:#dddddd;
+            font-size: 20px;
+            width: 700px;
+            height: 120px;
+            overflow: auto;
+            margin: 13px 10px 10px 20px;
+        }
+    }
+    .team_wrapper {
+        display: flex;
+        //background-color: #E7FCE7;
+        .team {
+            width: 700px;
+            height: 300px;
+            overflow: auto;
+            border-radius: 5px;
+            border: 1px solid;
+            border-color:#fcfcf8;
+            background-color: #FFFFFF;
+            margin: 13px 20px 20px 20px;
+            div {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 10px 0px 10px;
+                border-radius: 5px;
+                border: 1px solid;
+                border-color:#dddddd;
+                height: 60px;
+                &:hover{
+                    border-color: #66E966;
+                    outline: 0;
+                    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0 , 0.08), 0 0 8px rgba(0, 0, 0 , 0.6);
+                    box-shadow: inset 0 1px 1px rgba(0, 0, 0 , 0.08), 0 0 8px rgba(0, 0, 0 , 0.6);
+                }
+                span {
+                    //display: flex;
+                    //border: 1px solid red;
+                    margin: 2px 2px 0px 2px;
+                    width: 100px;
+                    height: 55px;
+                }
+                .team_profile {
+                    i {
+                        margin-top: 5px;
+                        line-height: 1;
+                        font-size: 35px;
+                        color: #7C7CA8;
+                        width: 50px;
+                    }
+                }
+                .team_name {
+                    width: 400px;
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: #7C7CA8;
+                    line-height: 2;
+                    width: 80px;
+                }
+                .team_email {
+                    width: 400px;
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: #7C7CA8;
+                    line-height: 2;
+                    width: 200px;
+                }
+                .team_exclude {
+                    i {
+                        margin-top: 5px;
+                        line-height: 1;
+                        font-size: 35px;
+                        color: #7C7CA8;
+                        &:hover{
+                            font-size: 40px;
+                            color: #2A9600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.modal_btn {
+    button {
+        color: #fff;
+        background-color: #2BB632;
+        //background: linear-gradient(to right, #BCDD28, #56D82F);
+        border-radius: 5px;
+        border: 1px solid transparent;
+        padding: 4px 3px 2px 1px;
+        float: right;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        width: 170px;
+        height: 50px;
+        &:hover{
+            background: linear-gradient(to right, #BCDD28, #56D82F, #2FD892);
+            //background: linear-gradient(60deg, #F79533, #F37055, #EF4E7B, #A166AB, #5073B8, #1098AD, #07B39B, #6FBA82
+            border: 2px solid;
+        }
+        span {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+    .email_check {
+        font-size: 20px;
+        font-weight: 400;
+        color: red;
+    }
+}
+
+.team_wrapper {
+    display: flex;
+    //background-color: #E7FCE7;
+    .team {
+        width: 700px;
+        height: 300px;
+        overflow: auto;
+        scroll-behavior: smooth;
+        border-radius: 5px;
+        border: 1px solid;
+        border-color:#fcfcf8;
+        background-color: #FFFFFF;
+        //margin: 13px 20px 0px 20px;
+        div {
+            display: flex;
+            //justify-content: space-between;
+            margin: 10px 10px 0px 10px;
+            border-radius: 5px;
+            border: 0px solid;
+            border-color:#dddddd;
+            height: 60px;
+            &:hover{
+                border-color: #66E966;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0 , 0.08), 0 0 8px rgba(0, 0, 0 , 0.6);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0 , 0.08), 0 0 8px rgba(0, 0, 0 , 0.6);
+            }
+            span {
+                //display: flex;
+                //border: 1px solid red;
+                margin: 2px 2px 0px 2px;
+                //width: 100px;
+                height: 55px;
+            }
+            .team_profile {
+                i {
+                    margin-top: 5px;
+                    line-height: 1;
+                    font-size: 35px;
+                    color: #7C7CA8;
+                    width: 50px;
+                }
+            }
+            .team_name {
+                width: 400px;
+                font-size: 20px;
+                font-weight: 400;
+                color: #7C7CA8;
+                line-height: 2;
+                width: 80px;
+            }
+            .team_email {
+                width: 400px;
+                font-size: 20px;
+                font-weight: 400;
+                color: #7C7CA8;
+                line-height: 2;
+                width: 200px;
+            }
+            .team_exclude {
+                i {
+                    margin-top: 5px;
+                    line-height: 1;
+                    font-size: 35px;
+                    color: #7C7CA8;
+                    &:hover{
+                        font-size: 40px;
+                        color: #2A9600;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,397 @@
+body{
+  background-color: #E8FFE8;
+
+}
+
+#contentWrapper #content {
+    width: 88%;
+    min-width: 1300px;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+html, body, pre, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, menu, nav, section, hgroup, article, header, aside, footer, input, select, textarea, button, div {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, table, input, select, textarea, a {
+    font-size: 11px;
+    font-family: 'Overpass', '¸¼Àº °íµñ', 'Nanum Gothic', sans-serif;
+    color: #666;
+}
+code {
+    font-size: 11px;
+    font-family: 'Overpass', '¸¼Àº °íµñ', 'Nanum Gothic', sans-serif;
+    color: #666;
+    line-height: 20px;
+}
+#contentWrapper #content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+::selection {
+    color: #666;
+    background: #ecece7;
+}
+
+.titleArea h2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 15px;
+    letter-spacing: 5px;
+    font-family: 'Hind Guntur',sans-serif;
+    text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6, table, input, select, textarea, a {
+    font-size: 11px;
+    font-family: 'Overpass', '¸¼Àº °íµñ', 'Nanum Gothic', sans-serif;
+    color: #666;
+}
+
+html, pre, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, menu, nav, section, hgroup, article, header, aside, footer, input, select, textarea, button, div {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.titleArea {
+    margin: 20px auto 40px;
+    text-align: center;
+}
+
+code {
+    font-size: 11px;
+    font-family: 'Overpass', '¸¼Àº °íµñ', 'Nanum Gothic', sans-serif;
+    color: #666;
+    background: #fff;
+    line-height: 20px;
+}
+
+.subtit {
+    color: #666;
+    font-size: 11px;
+    line-height: 20px;
+}
+html, pre, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, menu, nav, section, hgroup, article, header, aside, footer, input, select, textarea, button, div {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+
+.find_idpw {
+    padding: 10px 0;
+    color: #666;
+    font-size: 11px;
+    line-height: 22px;
+}
+
+div {
+    display: block;
+}
+
+.contentbox {
+    width: 450px;
+    margin: 0 auto;
+}
+html, pre, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend, menu, nav, section, hgroup, article, header, aside, footer, input, select, textarea, button, div {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+
+.find_idpw .btn-area a {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.btn_03 {
+    display: inline-block;
+    padding: 14px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.btn_point {
+    border: 1px solid black;
+    background: #E0F0FF;
+    color: black;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+button, input, select, textarea, a {
+    font-size: 11px;
+    font-family: 'Overpass', '¸¼Àº °íµñ', 'Nanum Gothic', sans-serif;
+    color: #666;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+    color: #666;
+    cursor: pointer;
+}
+
+.btn_white {
+    border: 1px solid black;
+    background: #FFFFE0;
+    color: black;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.find_idpw .find-info table th {
+    font-weight: normal;
+    font-size: 11px;
+    color: #666;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.find_idpw .MS_input_txt {
+    width: 100%;
+    height: 40px;
+    padding: 4px 5px 4px;
+    box-sizing: border-box;
+    margin: 0;
+    line-height: 40px;
+    color: #666;
+    border-radius: 4px;
+}
+
+.MS_input_txt {
+    line-height: 24px;
+    border: 1px solid #f3f3f3;
+}
+input {
+    height: 26px;
+    line-height: 26px;
+    padding: 2px 8px;
+    border-width: medium;
+    background: white;
+    color: #666;
+    font-size: 11px;
+    box-sizing: border-box;
+}
+
+.find_idpw .find-info table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+h1, h2, h3, h4, h5, h6, table, input, select, textarea, a {
+    font-size: 11px;
+    font-family: 'Overpass', '¸¼Àº °íµñ', 'Nanum Gothic', sans-serif;
+    color: #666;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+element.style {
+	height: 300px;
+    width: 450px;
+    margin-left: -225px;
+    top: 50%;
+    left: 50%;
+    z-index: 90001;
+    position: fixed;
+    margin-top: -171px;
+    display: block;
+}
+
+.layerstyle4 {
+    position: absolute;
+    background: #F1F3F4;
+    border-radius: 7px;
+}
+
+.layerstyle4_title {
+    position: relative;
+    height: 43px;
+    background: #ACACAC;
+    border-radius: 7px 7px 0 0;
+    text-align: center;
+}
+
+.layerstyle4_title h3 {
+    position: relative;
+    padding: 11px 0 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #111;
+}
+
+.layerstyle4_title .btn_layerstyle4_close {
+    right: 12px;
+    background-image: url(https://www.flow.team/design2/img_rn/main/btn_layerstyle4_close.png);
+}
+
+.layerstyle4_title > [class*="btn_layerstyle4_"] {
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layerstyle4_cont {
+    position: relative;
+    padding: 20px;
+}
+
+.phone_authno_wrap {
+    padding: 20px 35px 30px 35px;
+    text-align: center;
+}
+
+.phone_authno_wrap {
+    padding: 20px 35px 30px 35px;
+    text-align: center;
+}
+
+.phone_authno_wrap h5 {
+    margin-bottom: 18px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #111;
+    font-weight: 500;
+    text-align: center;
+}
+
+.phone_authno .combo_style2.select-flag label.txt, .phone_authno .iptbx {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 26px;
+    color: #111;
+    text-align: left;
+    border: none;
+    border-bottom: 2px solid #d2d4d9;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+.phone_authno.ipt_center .iptbx {
+    height: auto;
+}
+
+.phone_authno .iptbx {
+    position: relative;
+    width: 300px;
+    margin: 0;
+    border-bottom: 1px solid #d2d4d9;
+    text-align: center;
+}
+
+.phone_authno.ipt_center .iptbx span.time.end {
+    color: blue;
+}
+
+.phone_authno.ipt_center .iptbx span.time {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    font-size: 16px;
+    color: #111;
+}
+
+
+.phone_authno.ipt_center .iptbx input {
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    background: #F1F3F4;
+}
+
+.phone_authno .iptbx input {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: -2px 0 0 0;
+    width: 98%;
+    height: 34px;
+    line-height: 30px;
+    font-size: 26px;
+    color: #111;
+    border: 0;
+}
+
+.btnst02 {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 198px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.phone_authno_wrap .errormsg p {
+    font-size: 12px;
+    color: #d64648;
+}
+
+.phone_authno_wrap .errormsg {
+    position: relative;
+    margin: 6px auto 30px auto;
+    width: 300px;
+    min-height: 16px;
+    text-align: left;
+}
+
+.phone_authno_wrap .errormsg p a {
+    font-size: 12px;
+    color: #747679;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

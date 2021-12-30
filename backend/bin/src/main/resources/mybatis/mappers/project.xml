@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project">
+
+	<select id="findAllByNo" parameterType="long" resultType="projectvo">
+		<![CDATA[
+		select p.no, p.name, p.description, p.start_date as startDate, p.end_date as endDate, p.reg_date as regDate, p.status, a.sequence, a.color, a.role, a.status as attendStatus
+        from attend a join project p on a.project_no = p.no
+        where a.user_no = #{no}
+		]]>
+	</select>
+	
+	<select id="findByProjectNo" parameterType="long" resultType="projectvo">
+		<![CDATA[
+		select no, name, description, start_date as startDate, end_date as endDate, reg_date as regDate, status
+        from project
+        where no = #{no }
+		]]>
+	</select>
+	
+	<insert id="insertProject" parameterType="projectvo" useGeneratedKeys="true" keyProperty="no">
+		<![CDATA[
+		insert into project values(null,#{name },#{description  },#{startDate  },#{endDate  },default,now());
+		]]>
+	</insert>
+	
+	<insert id="insertAttend" parameterType="map" >
+		<![CDATA[
+		insert into attend values(#{ userNo },#{ projectNo },'ADMIN',default,'green',#{ sequence });
+		]]>
+	</insert>
+	
+	<select id="findLastSequence"  parameterType="long" resultType="long">
+		<![CDATA[
+		select max(sequence) 
+		from attend
+		where user_no = #{ userNo };
+		]]>
+	</select>
+	
+	<update id ="updateBasic" parameterType="projectvo">
+		<![CDATA[
+		update project
+		set name = #{name }, description = #{description }, start_date = #{startDate } , end_date = #{endDate } 
+		where no = #{ no }
+		]]>
+	</update>
+
+
+
+	<select id="testFind" resultType="projectvo">
+		<![CDATA[
+		select no,name,description,start_date as startDate, end_date as endDate, reg_date as regDate
+		from project;
+
+		]]>
+	</select>
+
+</mapper>

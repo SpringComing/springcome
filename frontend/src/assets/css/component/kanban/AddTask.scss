@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.add_task {
+  display: inline-block;
+  button {
+    color: black;
+    background-color: #F6F8FC;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+  }
+}
+
+.add_icon {
+  position: relative;
+  right: 4px;
+}
+
+.kanban-column {
+  display: inline-block !important;
+  width: 22.1875rem;
+  white-space: normal;
+  vertical-align: top;
+  margin-left: 1rem;
+}
+
+

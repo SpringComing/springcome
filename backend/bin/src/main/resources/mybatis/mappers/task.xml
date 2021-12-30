@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="task">
+
+	<select id="findAllByProcessNo"  parameterType="long" resultType="taskvo">
+		<![CDATA[
+		select no, name, importance, start_date as startDate, end_date as endDate, status, sequence, color, process_no as processNo
+        from task
+        where process_no = #{no }
+        order by sequence
+		]]>
+	</select>
+
+	<select id="getFileList" parameterType="long" resultType="filevo">
+		<![CDATA[
+		select a.no, a.name, a.url, date_format(a.reg_date, '%Y-%m-%d %H:%i:%s') as regDate, a.task_no as taskNo, a.user_no as userNo, b.name as userName
+        from file a, user b
+        where a.task_no = #{no }
+        and a.user_no = b.no
+        order by a.reg_date desc
+		]]>
+	</select>
+	
+	<select id="getByFileNo" parameterType="long" resultType="filevo">
+		<![CDATA[
+		select a.no, a.name, a.url, date_format(a.reg_date, '%Y-%m-%d %H:%i:%s') as regDate, a.task_no as taskNo, a.user_no as userNo, b.name as userName
+        from file a, user b
+        where a.no = #{no }
+        and a.user_no = b.no
+		]]>
+	</select>
+	
+	<select id="getFileUserName" parameterType="long" resultType="string">
+		<![CDATA[
+		select name as userName
+        from user
+        where no = #{no }
+		]]>
+	</select>
+	
+	<select id="findTaskUser"  parameterType="long" resultType="uservo">
+		<![CDATA[
+		select c.no, c.name, c.email, c.password, c.birth, c.join_date, c.tel, c.profile
+		from task a, assign b, user c
+		where a.no = #{no } and a.no = b.task_no and b.user_no = c.no
+		]]>
+	</select>
+	
+	<select id="findTaskNoneUser" parameterType="map" resultType="uservo">
+		<![CDATA[
+		select b.no, b.name, b.email, b.birth, b.join_date, b.password, b.profile, b.tel
+		from attend a, user b
+		where a.user_no = b.no
+		and	a.project_no = #{projectNo }
+		and a.user_no not in (	select c.no
+							from task a, assign b, user c
+							where a.no = #{taskNo } and a.no = b.task_no and b.user_no = c.no	)
+		
+		]]>
+	</select>
+	
+	<select id="findComment"  parameterType="map" resultType="commentvo">
+		<![CDATA[
+		select comment.no,reg_date,message,task_no, user_no, name
+		from comment,user
+		where user.no = comment.user_no and task_no = #{task_no}
+		order by comment.no asc
+		]]>
+	</select>
+	
+	<select id="commentData" parameterType="integer" resultType="commentvo">
+		<![CDATA[
+		select comment.no,reg_date,message,task_no, user_no, name
+		from comment,user
+		where user.no = comment.user_no and comment.no = #{comment_no}
+		]]>
+	</select> 
+	
+	<insert id="addComment" parameterType="map" useGeneratedKeys="true" keyColumn="no" keyProperty="no">
+		<![CDATA[
+		insert 
+		into comment 
+		values(null, now(), #{message }, #{task_no}, #{user_no})
+		]]>
+	</insert>
+	
+
+	
+	<select id="findMaxSeqByProcessNo"  parameterType="long" resultType="long">
+		<![CDATA[
+		select max(sequence)
+        from task
+        where process_no = #{no}
+		]]>
+	</select>
+	
+	
+	<update id ="updateTaskAttr" parameterType="taskvo">
+		<![CDATA[
+			update task
+			set name = #{name }, importance = #{importance }, start_date = #{startDate }, end_date = #{endDate }			
+			where no = #{no }
+		]]>
+	</update>
+	
+	<update id ="updateProcessTaskSeq1" parameterType="taskdiffvo">
+		<![CDATA[
+			update task
+			set sequence = sequence - 1
+			where process_no = #{oriProcessNo } and sequence > #{oriTaskSeq }
+		]]>
+	</update>
+	
+	<update id ="updateProcessTaskSeq2" parameterType="taskdiffvo">
+		<![CDATA[
+			update task
+			set sequence = sequence + 1
+			where process_no = #{newProcessNo } and sequence >= #{newTaskSeq }
+		]]>
+	</update>
+	
+	<update id ="updateProcessTaskSeq3" parameterType="taskdiffvo">
+		<![CDATA[
+			update task
+			set sequence = #{newTaskSeq }, process_no = #{newProcessNo }
+			where no = #{taskNo }
+		]]>
+	</update>
+	
+	<update id ="updateProcessTaskSeq" parameterType="taskdiffvo">
+		<![CDATA[
+			update task
+			set sequence = sequence - 1
+			where process_no = #{oriProcessNo } and sequence > #{oriTaskSeq };
+			
+			update task
+			set sequence = sequence + 1
+			where process_no = #{newProcessNo } and sequence >= #{newTaskSeq };
+			
+			update task
+			set sequence = #{newTaskSeq }, process_no = #{newProcessNo }
+			where no = #{taskNo };
+		]]>
+	</update>
+	
+	<update id ="updateTaskSeq" parameterType="tasksamevo">
+	<![CDATA[	
+			update task
+			set sequence = sequence - 1
+			where process_no = #{processNo } and sequence > #{oriTaskSeq } and sequence <= #{newTaskSeq };
+			
+			update task
+			set sequence = #{newTaskSeq }
+			where no = #{taskNo };
+	]]>	
+	</update>
+	
+	
+	<update id ="updateTaskSeq1" parameterType="tasksamevo">
+		<choose>
+			<when test="oriTaskSeq lt newTaskSeq">
+				<![CDATA[
+				update task
+				set sequence = sequence - 1
+				where process_no = #{processNo } and sequence > #{oriTaskSeq } and sequence <= #{newTaskSeq }
+				]]>				
+			</when>
+			<when test="oriTaskSeq gt newTaskSeq">
+				<![CDATA[
+				update task
+				set sequence = sequence + 1
+				where process_no = #{processNo } and sequence < #{oriTaskSeq } and sequence >= #{newTaskSeq }
+				]]>				
+			</when>
+		</choose>
+
+	</update>
+	
+	<update id ="updateTaskSeq2" parameterType="tasksamevo">
+	<![CDATA[	
+			update task
+			set sequence = #{newTaskSeq }
+			where no = #{taskNo }
+	]]>	
+	</update>
+	
+	<update id ="update" parameterType="long">
+		<![CDATA[
+		update task
+		set status = !status
+		where no = #{no }
+		]]>
+	</update>
+	
+	<insert id="insert" parameterType="taskvo" useGeneratedKeys="true" keyProperty="no">
+		<![CDATA[
+		insert into task values(null, #{name }, #{importance }, #{startDate }, #{endDate }, #{status }, #{sequence }, #{color }, #{processNo })
+		]]>
+	</insert>
+	
+	
+	<insert id="insertFile" parameterType="filevo" useGeneratedKeys="true" keyProperty="no">
+		<![CDATA[
+		insert into file values(null, #{name }, #{url }, now(), #{taskNo }, #{userNo })
+		]]>
+	</insert>
+	
+	<insert id="insertAssign" parameterType="map">
+		<![CDATA[
+		insert into assign (task_no, user_no) values (#{taskNo }, #{userNo })
+		]]>
+	</insert>
+	
+	<delete id="deleteAssign" parameterType="map">
+		<![CDATA[
+		delete from assign where task_no = #{taskNo } and user_no = #{userNo }
+		]]>
+	</delete>
+	
+	<delete id="deleteTask" parameterType="long">
+		<![CDATA[
+		delete from task where no = #{no }
+		]]>
+	</delete>
+	
+	<delete id="deleteFile" parameterType="long">
+		<![CDATA[
+		delete from file where no = #{no }
+		]]>
+	</delete>
+	
+</mapper>

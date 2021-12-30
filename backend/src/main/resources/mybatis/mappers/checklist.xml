@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="checklist">
+
+	<select id="findAllByTaskNo"  parameterType="long" resultType="checklistvo">
+		<![CDATA[
+		select no, status, name, task_no as taskNo
+        from checklist
+        where task_no = #{no}
+        order by no
+		]]>
+	</select>
+	
+	<delete id ="deleteByChecklistNo" parameterType="long">
+		<![CDATA[
+		delete
+		from checklist
+		where no = #{no}
+		]]>
+	</delete>
+	
+	<insert id="insert" parameterType="checklistvo" useGeneratedKeys="true" keyProperty="no">
+		<![CDATA[
+		insert into checklist values(null, default, #{name }, #{taskNo })
+		]]>
+	</insert>
+	
+	<update id ="update" parameterType="long">
+		<![CDATA[
+		update checklist
+		set status = !status
+		where no = #{no }
+		]]>
+	</update>
+	
+</mapper>

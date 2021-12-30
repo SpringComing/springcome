@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="calendar">
+
+	<select id="FindProject" resultType="projectvo" parameterType="map">
+		<![CDATA[
+		select no,name,description,start_date as startDate, end_date as endDate, reg_date as regDate, color
+		from project, attend
+		where project.no = attend.project_no and attend.user_no = #{no}
+		]]>
+	</select>
+	
+	<select id="FindMemo" resultType="memovo" parameterType="map">
+		<![CDATA[
+		select *
+		from memo
+		where user_no = #{no}
+		]]>
+	</select>
+	
+	<select id="maxNo" resultType="String">
+		<![CDATA[
+		select max(no)
+		from memo
+		]]>
+	</select>
+	
+	<select id="FindTask" resultType="tasktoprojectvo" parameterType="map">
+		<![CDATA[
+		select task.name, task.start_date as startDate, task.end_date as endDate, task.color, task.importance, task.status, task.no, project.name as project
+		from task, assign, user,process, project
+		where task.no = assign.task_no and user.no = assign.user_no and task.process_no = process.no and process.project_no = project.no and user.no = #{no };
+		]]>
+	</select>
+	
+	<insert id ="insertMemo" parameterType="map">
+		<![CDATA[
+		insert into memo (title, user_no, date, no)
+		values(#{title }, #{no }, #{date }, #{n })
+		]]>
+	</insert>
+	
+	<delete id ="deleteMemo" parameterType="map">
+		<![CDATA[
+		delete
+		from memo
+		where title= #{title } and date= #{date } and user_no= #{no } and no = #{n }
+		]]>
+	</delete>
+	
+	<update id ="updateMemo" parameterType="map">
+		<![CDATA[
+		update memo
+		set date = #{date }
+		where title = #{title } and user_no = #{no } and no = #{n }
+		]]>
+	</update>
+	
+</mapper>

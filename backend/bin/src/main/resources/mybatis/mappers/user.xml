@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+
+	<select id="findByUseremail" parameterType="map" resultType="uservo">
+		<![CDATA[
+		select *
+		from user
+		where email = #{e }
+		]]>
+	</select>
+	
+	<select id="findEmail" parameterType="map" resultType="uservo">
+		<![CDATA[
+		select *
+		from user
+		where name = #{n } and tel = #{t }
+		]]>
+	</select>
+	
+	<select id="findAll" parameterType="map" resultType="uservo">
+		<![CDATA[
+		select email, name, join_date, tel, birth, profile,image
+		from user
+		where no = #{no }
+		]]>
+	</select>
+	
+	<select id="findPassword" parameterType="map" resultType="uservo">
+		<![CDATA[
+		select *
+		from user
+		where email = #{e } and tel = #{t }
+		]]>
+	</select>
+	
+	<select id="findTel" parameterType="map" resultType="uservo">
+		<![CDATA[
+		select *
+		from user
+		where tel = #{t }
+		]]>
+	</select>
+	
+	<insert id="join" parameterType="uservo">
+		<![CDATA[
+		insert
+		  into user (join_date, email, name, password, tel, birth)
+		values (now(),#{email },#{name }, #{password }, #{tel }, #{birth })
+		]]>
+	</insert>
+	
+	<update id="updatePWD" parameterType="map">
+		<![CDATA[
+		update user
+		   set password = #{p }
+		 where email=#{e }
+		]]>
+	</update>
+	
+	<update id="updateProfile" parameterType="map">
+		<![CDATA[
+		update user
+		   set name= #{name }, birth= #{birth }, profile= #{profile }
+		 where no=#{no }
+		]]>
+	</update>
+	
+	<update id="updateImage" parameterType="map">
+		<![CDATA[
+		update user
+		set image = #{image }
+		where no = #{no}
+		]]>
+	</update>
+	
+
+	
+	
+	
+			
+</mapper>

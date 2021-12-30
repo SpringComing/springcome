@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="alarm">
+
+	<insert id="insertAlarm" parameterType="map" useGeneratedKeys="true" keyProperty="alarmNo">
+		<![CDATA[
+		insert into alarm values(null, #{message }, now(), #{type })
+		]]>
+	</insert>
+	
+	<insert id="insertAlarmBox" parameterType="map" >
+		<![CDATA[
+		insert into alarmbox values(#{userNo }, #{alarmNo }, default)
+		]]>
+	</insert>
+	
+	<select id="findAlarm" resultType="alarmvo" parameterType="long">
+		<![CDATA[
+		select b.user_no as userNo, a.no as alarmNo, a.message, a.reg_date as regDate, a.type, b.status
+		from alarmbox b join alarm a on b.alram_no = a.no
+		where b.user_no = #{userNo }
+		order by a.no desc
+		]]>
+	</select>
+	
+	<update id="updateAlarmBox" parameterType="map">
+		<![CDATA[
+		update alarmbox
+		set status = 1
+		where user_no= #{userNo } and alram_no = #{alarmNo };
+		]]>
+	</update>
+	
+	<delete id="deleteAlarmBox" parameterType="map">
+		<![CDATA[
+		delete from alarmbox where user_no = #{userNo } and alram_no = #{alarmNo }
+		]]>
+	</delete>
+	
+	<update id="updateAllAlarmBox" parameterType="long">
+		<![CDATA[
+		update alarmbox
+		set status = 1
+		where user_no= #{userNo }
+		]]>
+	</update>
+	
+	<delete id="deleteReadAlarmBox" parameterType="long">
+		<![CDATA[
+		delete from alarmbox where user_no = #{userNo } and status = 1
+		]]>
+	</delete>
+	
+	<delete id="deleteAllAlarmBox" parameterType="long">
+		<![CDATA[
+		delete from alarmbox where user_no = #{userNo }
+		]]>
+	</delete>
+</mapper>

@@ -1,0 +1,51 @@
+<link href="${pageContext.request.contextPath }/assets/css/join.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="${pageContext.request.contextPath }/assets/css/jquery.modal.css"
+	rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/assets/js/findscript.js"></script>
+<div id="authLayerTemp">
+	<!-- 인증 layerpopup -->
+	<div id="authLayer" class="layerstyle4"
+		style="width: 450px; margin-left: -225px; top: 50%; left: 50%; z-index: 90001; position: fixed; margin-top: -171px; display: block;">
+		<div class="layerstyle4_po">
+			<div class="layerstyle4_title">
+				<h3 style='font-weight: bold;'>인증번호 입력</h3>
+				<button id="authLayerClose" class="btn_layerstyle4_close"
+					onclick="$('#authLayerTemp').hide(); stopTimer();"></button>
+			</div>
+			<div class="layerstyle4_cont" style="height: 300px;">
+
+				<div id="authCheckLayer" class="phone_authno_wrap">
+					<h5 class="font-Noto">
+						<span>회원가입 시 등록한 휴대폰 번호</span><br> <span id="inputtel"></span>
+						<span data-langcode="H518">으로<br>4자리 인증번호가 전송되었습니다.
+						</span>
+					</h5>
+					<div class="phone_authno ipt_center">
+						<span class="iptbx" style="cursor: pointer;"> <input
+							id="AUTH_NO" type="text" class="font-Noto" name="AUTH_NO"
+							style="width: 160px;" maxlength="4"><span id="authTime"
+							class="time end"></span>
+						</span>
+					</div>
+
+					<div class="errormsg">
+						<!-- 인증실패시 메시지 -->
+						<p id="authErrMsgLayer" style="">
+							<span id="authErrMsg"></span><a id="authReSend" href="#"
+								onclick="stopTimer(); $('#authLayerTemp').hide(); findId();"
+								data-langcode="H520">재전송</a>
+						</p>
+					</div>
+					<button id="authSendBtn" class="btnst02 off"
+						style="width: 300px; display: inline-block;" onclick="authTel();">확인</button>
+					<br />
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>

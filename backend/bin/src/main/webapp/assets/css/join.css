@@ -1,0 +1,304 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  background-color: #E8FFE8;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.register {
+	width: 550px;
+	margin: 30px auto;
+	padding: 15px 20px;
+	background: #E0F0FF;
+	color: #2b2e4a;
+	font-size: 14px;
+	text-align: left;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	opacity: 95%;
+	
+}
+
+.register h3 {
+	font-size: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.register input {
+	width: 100%;
+	height: 40px;
+	outline: none;
+	padding: 10px;
+	border: 1px solid #707070;
+	transition: 0.3s;
+}
+
+.register input:valid, .register input:focus {
+	border: 1px solid #2b2e4a;
+}
+
+.register .center {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+.register .flex {
+	display: flex;
+	flex-direction: column;
+	padding-left: 15px
+}
+
+.register .flex .container {
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	margin-bottom: 10px;
+}
+
+.register .flex .container .item:first-child {
+	margin-right: 10px;
+}
+
+.register .flex .container .item .idcheck {
+	height: 100%;
+	margin-left: 10px;
+	padding: 5px 15px;
+	background: #2b2e4a;
+	border: 1px solid #2b2e4a;
+	color: white;
+	font-size: 12px;
+	transition: 0.3s;
+}
+
+.register .flex .container .item .idcheck:hover {
+	background: white;
+	color: #2b2e4a;
+}
+
+.register .flex .container .item select {
+	height: 40px;
+	padding: 10px;
+	border: 1px solid #2b2e4a;
+}
+
+.register .submit {
+	width: 100%;
+	height: 40px;
+	color: black;
+	border: none;
+	border: 1px solid #2b2e4a;
+	background: #80FFC0;
+	transition: 0.3s;
+}
+
+.register .flex .container:last-child {
+	margin: 0;
+}
+
+.register .submit:hover {
+	width: 100%;
+	height: 40px;
+	border: none;
+	border: 1px solid #2b2e4a;
+	color: #2b2e4a;
+	background: white;
+}
+
+body {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#Progress_Loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: #ffffff;
+}
+
+
+element.style {
+	height: 300px;
+    width: 450px;
+    margin-left: -225px;
+    top: 50%;
+    left: 50%;
+    z-index: 90001;
+    position: fixed;
+    margin-top: -171px;
+    display: block;
+}
+
+.layerstyle4 {
+    position: absolute;
+    background: #F1F3F4;
+    border-radius: 7px;
+}
+
+.layerstyle4_title {
+    position: relative;
+    height: 43px;
+    background: #ACACAC;
+    border-radius: 7px 7px 0 0;
+    text-align: center;
+}
+
+.layerstyle4_title h3 {
+    position: relative;
+    padding: 11px 0 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #111;
+}
+
+.layerstyle4_title .btn_layerstyle4_close {
+    right: 12px;
+    background-image: url(https://www.flow.team/design2/img_rn/main/btn_layerstyle4_close.png);
+}
+
+.layerstyle4_title > [class*="btn_layerstyle4_"] {
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layerstyle4_cont {
+    position: relative;
+    padding: 20px;
+}
+
+.phone_authno_wrap {
+    padding: 20px 35px 30px 35px;
+    text-align: center;
+}
+
+.phone_authno_wrap {
+    padding: 20px 35px 30px 35px;
+    text-align: center;
+}
+
+.phone_authno_wrap h5 {
+    margin-bottom: 18px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #111;
+    font-weight: 500;
+    text-align: center;
+}
+
+.phone_authno .combo_style2.select-flag label.txt, .phone_authno .iptbx {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 26px;
+    color: #111;
+    text-align: left;
+    border: none;
+    border-bottom: 2px solid #d2d4d9;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+.phone_authno.ipt_center .iptbx {
+    height: auto;
+}
+
+.phone_authno .iptbx {
+    position: relative;
+    width: 300px;
+    margin: 0;
+    border-bottom: 1px solid #d2d4d9;
+    text-align: center;
+}
+
+.phone_authno.ipt_center .iptbx span.time.end {
+    color: blue;
+}
+
+.phone_authno.ipt_center .iptbx span.time {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    font-size: 16px;
+    color: #111;
+}
+
+
+.phone_authno.ipt_center .iptbx input {
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    background: #F1F3F4;
+}
+
+.phone_authno .iptbx input {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: -2px 0 0 0;
+    width: 98%;
+    height: 34px;
+    line-height: 30px;
+    font-size: 26px;
+    color: #111;
+    border: 0;
+}
+
+.btnst02 {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 198px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.phone_authno_wrap .errormsg p {
+    font-size: 12px;
+    color: #d64648;
+}
+
+.phone_authno_wrap .errormsg {
+    position: relative;
+    margin: 6px auto 30px auto;
+    width: 300px;
+    min-height: 16px;
+    text-align: left;
+}
+
+.phone_authno_wrap .errormsg p a {
+    font-size: 12px;
+    color: #747679;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

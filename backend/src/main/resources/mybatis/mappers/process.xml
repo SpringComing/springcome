@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="process">
+
+	<select id="findAllByProjectNo" parameterType="long" resultType="processvo">
+		<![CDATA[
+		select no, name, sequence, project_no as projectNo
+        from process
+        where project_no = #{no}
+        order by sequence
+		]]>
+	</select>
+	
+	<insert id="insert" parameterType="processvo" useGeneratedKeys="true" keyProperty="no">
+		<![CDATA[
+		insert into process values(null, #{name }, #{sequence }, #{projectNo })
+		]]>
+	</insert>
+	
+	<select id="findMaxSeq" parameterType="long" resultType="long">
+		<![CDATA[
+		select max(sequence)
+        from process
+        where project_no = #{projectNo}
+		]]>
+	</select>
+	
+	<update id ="update" parameterType="processvo">
+		<![CDATA[
+		update process
+		set name = #{name}
+		where no = #{no }
+		]]>
+	</update>
+	
+	<delete id ="delete" parameterType="long">
+		<![CDATA[
+		delete from process where no = #{no }
+		]]>
+	</delete>
+	
+</mapper>

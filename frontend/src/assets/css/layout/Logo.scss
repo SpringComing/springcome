@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+.logo {
+    grid-area: logo;
+    font-weight: 700;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    color: var(--colorWhite);
+    cursor: pointer;
+
+    img {
+      height: 60px;
+      grid-area: logo;
+      display: flex;
+      object-fit: cover;
+    }
+  }
